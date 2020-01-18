@@ -365,7 +365,7 @@ music.volume = 0.3
                 document.getElementById("weight").innerText = "MAX"
 
                 degreenumber = weightlimit
-                weight = weightlimit
+                weight = weightlimit*2
                 document.getElementById("spinweightid").innerText = "Weight: " + weight
                 return;
             }
