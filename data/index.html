@@ -12,6 +12,10 @@
                 left: 32%;
             }
 
+            #Body{
+                background-image: url("./StarterBackground.jpg");
+            }
+
             #pen2:hover{
                 cursor: pointer;
                 background-color: green;
@@ -63,6 +67,14 @@
                 background-color: greenyellow;
             }
 
+            #skins{
+                width: 100px;
+                height: 60px;
+                position: absolute;
+                top: 45%;
+                background-color: rgb(95, 139, 29);
+            }
+
             #faster:hover{
                 cursor: pointer;
                 background-color: blue;
@@ -105,6 +117,30 @@
                 background-color: lightblue;
             }
 
+            #backgrounds{
+                position: absolute;
+                width: 100px;
+                height: 60px;
+                left: 93%;
+                top: 35%;
+                background-color: rgb(119, 152, 163);
+            }
+
+            #back1{
+                width: 210;
+                height: 120;
+            }
+
+            #back2{
+                width: 210;
+                height: 120;
+            }
+
+            #back3{
+                width: 210;
+                height: 120;
+            }
+
             .Spinstext{
                 font-size: 20px;
                 font-weight: 900;
@@ -134,16 +170,19 @@
 
         </style>
     </head>
-    <body style="overflow: hidden; background: grey;">
+    <body style="overflow: hidden; background-repeat: no-repeat; background-size: 100%;" id="Body">
        <img class="Pen"; id="penid" style="top: 25%; left: 37%; position: absolute;">
        <div class="ueberschrift">Penspin Simulator</div>
+       <image class="background"></image>
 
+       <button onclick="localStorage.clear(); clearInterval(Actualpenspin)">Reset</button>
        <div class="pens">
 
         <button id="pen2" onclick="Pen2()">Pen 2 (100.000 Spins)</button>
         <button id="pen3" onclick="Pen3()">Pen 3 (10.000.000 Spins)</button>
         <button id="pen4" onclick="Pen4()">Pen 4 (100.000.000 Spins)</button>
         <button id="pen5" onclick="Pen5()">Pen 5 (1.000.000.000 Spins)</button>
+        <button id="skins" onclick="Skins()">Pen Skins</button>
 
        </div>
 
@@ -152,6 +191,15 @@
         <button id="faster" onclick="faster()">Faster Spin (10 Spins)</button>
         <button id="weight" onclick="heavier()">Heavier Pen (15 Spins)</button>
         <button id="multy" onclick="multy()">Spin Multiplyer (10 Spins)</button>
+        <button id="backgrounds" onclick="Backgrounds()">Backgrounds</button>
+
+       </div>
+
+       <div id="BackgroundShop" style="position:absolute; left: 200%; background-color: cornflowerblue; width: 500px; height: 300px;">
+
+        <button id="back1"; onclick="Backgr1()" style="background-image: url(./Background1.jpg); background-size: 100%; color: white;">Background 1</button>
+        <button id="back2"; onclick="Backgr2()" style="background-image: url(./Background2.png); background-size: 100%; color: white;">Background 2</button>
+        <button id="back3"; onclick="Backgr3()" style="background-image: url(./Background3.gif); background-size: 100%; color: white;">Background 3</button>
 
        </div>
 
