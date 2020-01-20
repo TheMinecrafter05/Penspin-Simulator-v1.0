@@ -20,11 +20,13 @@ var weightpreis = 1.05;
 
 var multypreis = 1.055;
 
-var speedlimit = 2;
+var speedlimit = 0;
 
-var weightlimit = 50;
+var weightlimit = 100;
 
 var multylimit = 50;
+
+var openShop = 0;
 
 var pen = "./StartPen.jpg";
 let music = new Audio()
@@ -76,6 +78,14 @@ music.volume = 0.3
         if(pen == "./Pen3.jpg"){
             document.getElementById("pen3").innerText = "Using Pen 3"
         }
+
+        if(pen == "./Pen4.jpg"){
+            document.getElementById("pen4").innerText = "Using Pen 4"
+        }
+
+        if(pen == "./Pen5.jpg"){
+            document.getElementById("pen5").innerText = "Using Pen 5"
+        }
           document.getElementById("penid").src=pen
           document.getElementById("penid").style.width = "425px"
           document.getElementById("penid").style.height = "425px"
@@ -84,10 +94,10 @@ music.volume = 0.3
           document.getElementById("spinweightid").innerText = "Weight: " + weight
 
           spintime -= speed+1
-          degreenumber += weight-1
+          degreenumber += Math.floor(weight/2)
 
-          if(degreenumber >= weightlimit){
-              degreenumber = weightlimit
+          if(weight >= weightlimit){
+              degreenumber = weightlimit/2
               document.getElementById("weight").style.backgroundColor ="RED"
             document.getElementById("weight").innerText = "MAX"
           }
@@ -152,14 +162,25 @@ music.volume = 0.3
         if(spins < 100000) return console.log("Zu wenig!");
 
         if(pen == "./Pen2.jpg"){
-                document.getElementById("pen2").innerText = "Using Pen 2"
+                document.getElementById("pen2").innerText = "Already using Pen 2"
             return;
         }
 
         if(pen == "./Pen3.jpg"){
-            document.getElementById("pen2").innerText = "Using Pen 3"
+            document.getElementById("pen2").innerText = "Already using Pen 3"
         return;
-    }
+        }
+
+        if(pen == "./Pen4.jpg"){
+            document.getElementById("pen2").innerText = "Already using Pen 4"
+        return;
+        }
+
+        if(pen == "./Pen5.jpg"){
+            document.getElementById("pen2").innerText = "Already using Pen 5"
+        return;
+        }  
+
         pen = "./Pen2.jpg"
         document.getElementById("penid").src=pen
         document.getElementById("penid").style.width = "425px"
@@ -169,11 +190,23 @@ music.volume = 0.3
 
         speed = 5
 
-        spintime = 100
+        spintime = 95
 
         multiplyer = 5
 
         weight = 5
+
+        speedpreis = 1.04;
+
+        weightpreis = 1.05;
+
+        multypreis = 1.055;
+
+        speedkosten = 10
+
+        weightkosten = 15
+
+        multykosten = 10
 
         speedpreis += 0.02
         weightpreis += 0.02
@@ -227,10 +260,20 @@ music.volume = 0.3
     function Pen3(){
         if(spins < 10000000) return console.log("Zu wenig!");
 
-        if(pen == "./Pen3.jpg"){
-                document.getElementById("pen3").innerText = "Using Pen 3"
-            return;
-        }
+    if(pen == "./Pen3.jpg"){
+        document.getElementById("pen3").innerText = "Already using Pen 3"
+    return;
+    }
+
+    if(pen == "./Pen4.jpg"){
+        document.getElementById("pen3").innerText = "Already using Pen 4"
+    return;
+    }
+
+    if(pen == "./Pen5.jpg"){
+        document.getElementById("pen3").innerText = "Already using Pen 5"
+    return;
+    }  
         pen = "./Pen3.jpg"
         document.getElementById("penid").src=pen
         document.getElementById("penid").style.width = "425px"
@@ -240,11 +283,23 @@ music.volume = 0.3
 
         speed = 10
 
-        spintime = 100
+        spintime = 90
 
         multiplyer = 10
 
         weight = 10
+
+        speedpreis = 1.04;
+
+        weightpreis = 1.05;
+
+        multypreis = 1.055;
+
+        speedkosten = 10
+
+        weightkosten = 15
+
+        multykosten = 10
 
         speedpreis += 0.06
         weightpreis += 0.06
@@ -295,11 +350,172 @@ music.volume = 0.3
     }
 
     function Pen4(){
+        if(spins < 100000000) return console.log("Zu wenig!");
+
+    if(pen == "./Pen4.jpg"){
+        document.getElementById("pen4").innerText = "Already using Pen 4"
+    return;
+    }
+
+    if(pen == "./Pen5.jpg"){
+        document.getElementById("pen4").innerText = "Already using Pen 5"
+    return;
+    }  
+        pen = "./Pen4.jpg"
+        document.getElementById("penid").src=pen
+        document.getElementById("penid").style.width = "425px"
+        document.getElementById("penid").style.height = "425px"
+
+        degreenumber = 15
+
+        speed = 15
+
+        spintime = 85
+
+        multiplyer = 15
+
+        weight = 15
+
+        speedpreis = 1.04;
+
+        weightpreis = 1.05;
+
+        multypreis = 1.055;
+
+        speedkosten = 10
+
+        weightkosten = 15
+
+        multykosten = 10
+
+        speedpreis += 0.08
+        weightpreis += 0.08
+        multypreis += 0.08
+
+        document.getElementById("spintextid").innerText = "Spins: " + spins
+        document.getElementById("spinspeedid").innerText = "Speed: " + speed
+        document.getElementById("spinweightid").innerText = "Weight: " + weight
+
+        if(document.getElementById("faster").innerText = "MAX"){
+            document.getElementById("faster").innerText = "Faster Spin ("+Math.floor(speedkosten)+" Spins)"
+            document.getElementById("faster").style.backgroundColor = "lightblue"
+        }
+
+        if(document.getElementById("weight").innerText = "MAX"){
+            document.getElementById("weight").innerText = "Heavier Pen ("+Math.floor(weightkosten)+" Spins)"
+            document.getElementById("weight").style.backgroundColor = "lightblue"
+        }
+
+        if(document.getElementById("multy").innerText = "MAX"){
+            document.getElementById("multy").innerText = "Spin Multiplyer ("+Math.floor(multykosten)+" Spins)"
+            document.getElementById("multy").style.backgroundColor = "lightblue"
+        }
+
+        save()
+
         clearInterval(Actualpenspin)
+
+        Actualpenspin = setInterval(function() {
+
+            music.play()
+            let rotateimage = document.getElementById("penid");
+
+            rotateimage.style.transform = `rotate(${degrees}deg)`
+
+
+            degrees+=degreenumber
+            if(degrees > 359) {
+
+                spins+=1*multiplyer
+                save()
+
+            document.getElementById("spintextid").innerText = "Spins: " + spins
+
+                degrees = 1
+            }
+        }, spintime)
     }
 
     function Pen5(){
-        localStorage.clear()
+        if(spins < 1000000000) return console.log("Zu wenig!");
+
+    if(pen == "./Pen5.jpg"){
+        document.getElementById("pen5").innerText = "Already using Pen 5"
+    return;
+    }  
+        pen = "./Pen5.jpg"
+        document.getElementById("penid").src=pen
+        document.getElementById("penid").style.width = "425px"
+        document.getElementById("penid").style.height = "425px"
+
+        degreenumber = 20
+
+        speed = 20
+
+        spintime = 70
+
+        multiplyer = 20
+
+        weight = 20
+
+        speedpreis = 1.04;
+
+        weightpreis = 1.05;
+
+        multypreis = 1.055;
+
+        speedkosten = 10
+
+        weightkosten = 15
+
+        multykosten = 10
+
+        speedpreis += 0.1
+        weightpreis += 0.1
+        multypreis += 0.1
+
+        document.getElementById("spintextid").innerText = "Spins: " + spins
+        document.getElementById("spinspeedid").innerText = "Speed: " + speed
+        document.getElementById("spinweightid").innerText = "Weight: " + weight
+
+        if(document.getElementById("faster").innerText = "MAX"){
+            document.getElementById("faster").innerText = "Faster Spin ("+Math.floor(speedkosten)+" Spins)"
+            document.getElementById("faster").style.backgroundColor = "lightblue"
+        }
+
+        if(document.getElementById("weight").innerText = "MAX"){
+            document.getElementById("weight").innerText = "Heavier Pen ("+Math.floor(weightkosten)+" Spins)"
+            document.getElementById("weight").style.backgroundColor = "lightblue"
+        }
+
+        if(document.getElementById("multy").innerText = "MAX"){
+            document.getElementById("multy").innerText = "Spin Multiplyer ("+Math.floor(multykosten)+" Spins)"
+            document.getElementById("multy").style.backgroundColor = "lightblue"
+        }
+
+        save()
+
+        clearInterval(Actualpenspin)
+
+        Actualpenspin = setInterval(function() {
+
+            music.play()
+            let rotateimage = document.getElementById("penid");
+
+            rotateimage.style.transform = `rotate(${degrees}deg)`
+
+
+            degrees+=degreenumber
+            if(degrees > 359) {
+
+                spins+=1*multiplyer
+                save()
+
+            document.getElementById("spintextid").innerText = "Spins: " + spins
+
+                degrees = 1
+            }
+        }, spintime)
     }
 
 
@@ -360,12 +576,12 @@ music.volume = 0.3
 
         if(Math.floor(spins) < Math.floor(weightkosten)) return;
 
-        if(degreenumber >= weightlimit){
+        if(weight >= weightlimit){
             document.getElementById("weight").style.backgroundColor ="RED"
                 document.getElementById("weight").innerText = "MAX"
 
-                degreenumber = weightlimit
-                weight = weightlimit*2
+                degreenumber = weightlimit/2
+                weight = weightlimit
                 document.getElementById("spinweightid").innerText = "Weight: " + weight
                 return;
             }
@@ -383,7 +599,7 @@ music.volume = 0.3
 
             document.getElementById("spinweightid").innerText = "Weight: " + weight
 
-        degreenumber+=0.50
+        degreenumber+=0.5
 
         clearInterval(Actualpenspin)
 
@@ -444,10 +660,35 @@ music.volume = 0.3
 
             spins+=1*multiplyer
             save()
-
         document.getElementById("spintextid").innerText = "Spins: " + Math.floor(spins)
 
             degrees = 1
         }
     }, spintime)
+    }
+
+
+function Backgrounds(){
+    if(openShop == 0){
+        openShop = 1
+        document.getElementById("BackgroundShop").style.left="35%"
+    }else{
+        document.getElementById("BackgroundShop").style.left="200%"
+        openShop = 0
+    }
+}
+
+function Backgr1(){
+document.body.style.backgroundImage = "url(./Background1.jpg)"
+document.getElementById("BackgroundShop").style.left = "200%"
+}
+
+function Backgr2(){
+document.body.style.backgroundImage = "url(./Background2.png)"
+document.getElementById("BackgroundShop").style.left = "200%"
+}
+
+function Backgr3(){
+    document.body.style.backgroundImage = "url(./Background3.gif)"
+    document.getElementById("BackgroundShop").style.left = "200%"
     }
