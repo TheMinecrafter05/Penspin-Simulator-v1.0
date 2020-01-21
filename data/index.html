@@ -12,10 +12,6 @@
                 left: 32%;
             }
 
-            #Body{
-                background-image: url("./StarterBackground.jpg");
-            }
-
             #pen2:hover{
                 cursor: pointer;
                 background-color: green;
@@ -141,11 +137,30 @@
                 height: 120;
             }
 
+            #back4{
+                width: 210;
+                height: 120;
+            }
+
+            #back5{
+                width: 210;
+                height: 120;
+            }
+
+            #hackbutton{
+                position: absolute;
+                width: 100px;
+                height: 60px;
+                left: 93%;
+                top: 85%;
+                background-color: rgb(141, 8, 19);
+            }
+
             .Spinstext{
                 font-size: 20px;
                 font-weight: 900;
                 position: absolute;
-                color: brown;
+                color: white;
                 top: 85%;
                 left: 30%;
             }
@@ -154,7 +169,7 @@
                 font-size: 20px;
                 font-weight: 900;
                 position: absolute;
-                color: brown;
+                color: white;
                 top: 85%;
                 left: 45%;
             }
@@ -163,7 +178,7 @@
                 font-size: 20px;
                 font-weight: 900;
                 position: absolute;
-                color: brown;
+                color: white;
                 top: 85%;
                 left: 60%;
             }
@@ -179,9 +194,9 @@
        <div class="pens">
 
         <button id="pen2" onclick="Pen2()">Pen 2 (100.000 Spins)</button>
-        <button id="pen3" onclick="Pen3()">Pen 3 (10.000.000 Spins)</button>
-        <button id="pen4" onclick="Pen4()">Pen 4 (100.000.000 Spins)</button>
-        <button id="pen5" onclick="Pen5()">Pen 5 (1.000.000.000 Spins)</button>
+        <button id="pen3" onclick="Pen3()">Pen 3 (1.000.000 Spins)</button>
+        <button id="pen4" onclick="Pen4()">Pen 4 (5.000.000 Spins)</button>
+        <button id="pen5" onclick="Pen5()">Pen 5 (10.000.000 Spins)</button>
         <button id="skins" onclick="Skins()">Pen Skins</button>
 
        </div>
@@ -192,18 +207,21 @@
         <button id="weight" onclick="heavier()">Heavier Pen (15 Spins)</button>
         <button id="multy" onclick="multy()">Spin Multiplyer (10 Spins)</button>
         <button id="backgrounds" onclick="Backgrounds()">Backgrounds</button>
+        <button id="hackbutton" onclick="Hack()">Hack Spins</button>
 
        </div>
 
-       <div id="BackgroundShop" style="position:absolute; left: 200%; background-color: cornflowerblue; width: 500px; height: 300px;">
+       <div id="BackgroundShop" style="position:absolute; left: 200%; top: 10%; background-color: cornflowerblue; width: 700px; height: 500px;">
 
-        <button id="back1"; onclick="Backgr1()" style="background-image: url(./Background1.jpg); background-size: 100%; color: white;">Background 1</button>
-        <button id="back2"; onclick="Backgr2()" style="background-image: url(./Background2.png); background-size: 100%; color: white;">Background 2</button>
-        <button id="back3"; onclick="Backgr3()" style="background-image: url(./Background3.gif); background-size: 100%; color: white;">Background 3</button>
+        <button id="back1"; onclick="Backgr1()" style="background-image: url(./Background1.jpg); background-size: 100%; color: white;">Background 1 (500 Spins)</button>
+        <button id="back2"; onclick="Backgr2()" style="background-image: url(./Background2.png); background-size: 100%; color: white;">Background 2 (500 Spins)</button>
+        <button id="back3"; onclick="Backgr3()" style="background-image: url(./Background3.gif); background-size: 100%; color: white;">Background 3 (1500 Spins)</button>
+        <button id="back4"; onclick="Backgr4()" style="background-image: url(./Background4.jpg); background-size: 100%; color: white;">Background 4 (500 Spins)</button>
+        <button id="back5"; onclick="Backgr5()" style="background-image: url(./Background5.png); background-size: 100%; color: white;">Background 5 (500 Spins)</button>
 
        </div>
 
-       <div class="Spinstext" id="spintextid">Spins: 100</div>
+       <div class="Spinstext" id="spintextid">Spins: 150</div>
        <div class="spinspeed" id="spinspeedid">Speed: 1</div>
        <div class="spinweight" id="spinweightid">Weight: 1</div>
     </body>
