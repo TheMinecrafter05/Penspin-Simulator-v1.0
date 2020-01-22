@@ -4,6 +4,9 @@
         <script src="./jquery.min.js"></script>
         <script src="./index.js"></script>
         <style>
+            .ueberschrift:hover{
+                cursor:none;
+            }
             .ueberschrift{
                 font-size: 50px;
                 font-family: "Railway To Hells";
@@ -63,6 +66,10 @@
                 background-color: greenyellow;
             }
 
+            #skins:hover{
+                cursor: not-allowed;
+            }
+
             #skins{
                 width: 100px;
                 height: 60px;
@@ -113,6 +120,10 @@
                 background-color: lightblue;
             }
 
+            #backgrounds:hover{
+                cursor: pointer;
+            }
+
             #backgrounds{
                 position: absolute;
                 width: 100px;
@@ -122,9 +133,17 @@
                 background-color: rgb(119, 152, 163);
             }
 
+            #back1:hover{
+                cursor: pointer;
+            }
+
             #back1{
                 width: 210;
                 height: 120;
+            }
+
+            #back2:hover{
+                cursor: pointer;
             }
 
             #back2{
@@ -132,9 +151,17 @@
                 height: 120;
             }
 
+            #back3:hover{
+                cursor: pointer;
+            }
+
             #back3{
                 width: 210;
                 height: 120;
+            }
+
+            #back4:hover{
+                cursor: pointer;
             }
 
             #back4{
@@ -142,9 +169,17 @@
                 height: 120;
             }
 
+            #back5:hover{
+                cursor: pointer;
+            }
+
             #back5{
                 width: 210;
                 height: 120;
+            }
+
+            #hackbutton:hover{
+                cursor:cell;
             }
 
             #hackbutton{
@@ -181,6 +216,15 @@
                 color: white;
                 top: 85%;
                 left: 60%;
+            }
+
+            .spinmulty{
+                font-size: 20px;
+                font-weight: 900;
+                position: absolute;
+                color: white;
+                top: 93%;
+                left: 43.5%;
             }
 
         </style>
@@ -224,5 +268,6 @@
        <div class="Spinstext" id="spintextid">Spins: 150</div>
        <div class="spinspeed" id="spinspeedid">Speed: 1</div>
        <div class="spinweight" id="spinweightid">Weight: 1</div>
+       <div class="spinmulty" id="spinmultyid">Spins per spin: 1</div>
     </body>
 </html>
