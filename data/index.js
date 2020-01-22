@@ -36,7 +36,7 @@ var pen = "./StartPen.jpg";
 
 let music = new Audio()
 music.src = "./Background-Music.mp3"
-music.volume = 0.3
+music.volume = 0.2
 
 let speedkosten = 10
 
@@ -48,10 +48,16 @@ var multykosten = 10
     //speichern der Daten
     function save() {
         localStorage.setItem('Speed', JSON.stringify(speed));
+        localStorage.setItem('Speedpreis', JSON.stringify(speedpreis));
+        localStorage.setItem('Speedkosten', JSON.stringify(Math.floor(speedkosten)));
         localStorage.setItem('Weigh',JSON.stringify(weight));
+        localStorage.setItem('Weighpreis', JSON.stringify(weightpreis));
         localStorage.setItem('Weighlimit', JSON.stringify(weightlimit));
+        localStorage.setItem('Weighkosten', JSON.stringify(Math.floor(weightkosten)));
         localStorage.setItem('Multy', JSON.stringify(multiplyer));
+        localStorage.setItem('Multypreis', JSON.stringify(multypreis));
         localStorage.setItem('Multylimit', JSON.stringify(multylimit));
+        localStorage.setItem('Multykosten', JSON.stringify(Math.floor(multykosten)));
         localStorage.setItem('Spins', JSON.stringify(spins));
         localStorage.setItem('Pen', JSON.stringify(pen));
         localStorage.setItem('Background', JSON.stringify(back));
@@ -90,6 +96,24 @@ var multykosten = 10
 
           if(localStorage.getItem('Multylimit')){
             multylimit = JSON.parse(localStorage.getItem('Multylimit'));
+          }
+          if(localStorage.getItem('Multypreis')){
+            multypreis = JSON.parse(localStorage.getItem('Multypreis'));
+          }
+          if(localStorage.getItem('Weighpreis')){
+            weightpreis = JSON.parse(localStorage.getItem('Weighpreis'));
+          }
+          if(localStorage.getItem('Speedpreis')){
+            speedpreis = JSON.parse(localStorage.getItem('Speedpreis'));
+          }
+          if(localStorage.getItem('Speedkosten')){
+            speedkosten = JSON.parse(localStorage.getItem('Speedkosten'));
+          }
+          if(localStorage.getItem('Weighkosten')){
+            weightkosten = JSON.parse(localStorage.getItem('Weighkosten'));
+          }
+          if(localStorage.getItem('Multykosten')){
+            multykosten = JSON.parse(localStorage.getItem('Multykosten'));
           }
       }
 
@@ -140,6 +164,11 @@ var multykosten = 10
           document.getElementById("spintextid").innerText = "Spins: " + spins
           document.getElementById("spinspeedid").innerText = "Speed: " + speed
           document.getElementById("spinweightid").innerText = "Weight: " + weight
+          document.getElementById("spinmultyid").innerText = "Spins per spin: " + multiplyer
+
+          document.getElementById("faster").innerText = "Faster Spin ("+Math.floor(speedkosten)+" Spins)"
+          document.getElementById("weight").innerText = "Heavier Pen ("+Math.floor(weightkosten)+" Spins)"
+          document.getElementById("multy").innerText = "Spin Multiplyer ("+Math.floor(multykosten)+" Spins)"
 
           spintime -= speed+1
           degreenumber += Math.floor(weight/2)
@@ -276,6 +305,7 @@ var multykosten = 10
         document.getElementById("spintextid").innerText = "Spins: " + spins
         document.getElementById("spinspeedid").innerText = "Speed: " + speed
         document.getElementById("spinweightid").innerText = "Weight: " + weight
+        document.getElementById("spinmultyid").innerText = "Spins per spin: " + multiplyer
 
         if(document.getElementById("faster").innerText = "MAX"){
             document.getElementById("faster").innerText = "Faster Spin ("+Math.floor(speedkosten)+" Spins)"
@@ -382,6 +412,7 @@ var multykosten = 10
         document.getElementById("spintextid").innerText = "Spins: " + spins
         document.getElementById("spinspeedid").innerText = "Speed: " + speed
         document.getElementById("spinweightid").innerText = "Weight: " + weight
+        document.getElementById("spinmultyid").innerText = "Spins per spin: " + multiplyer
 
         if(document.getElementById("faster").innerText = "MAX"){
             document.getElementById("faster").innerText = "Faster Spin ("+Math.floor(speedkosten)+" Spins)"
@@ -481,6 +512,7 @@ var multykosten = 10
         document.getElementById("spintextid").innerText = "Spins: " + spins
         document.getElementById("spinspeedid").innerText = "Speed: " + speed
         document.getElementById("spinweightid").innerText = "Weight: " + weight
+        document.getElementById("spinmultyid").innerText = "Spins per spin: " + multiplyer
 
         if(document.getElementById("faster").innerText = "MAX"){
             document.getElementById("faster").innerText = "Faster Spin ("+Math.floor(speedkosten)+" Spins)"
@@ -577,6 +609,7 @@ var multykosten = 10
         document.getElementById("spintextid").innerText = "Spins: " + spins
         document.getElementById("spinspeedid").innerText = "Speed: " + speed
         document.getElementById("spinweightid").innerText = "Weight: " + weight
+        document.getElementById("spinmultyid").innerText = "Spins per spin: " + multiplyer
 
         if(document.getElementById("faster").innerText = "MAX"){
             document.getElementById("faster").innerText = "Faster Spin ("+Math.floor(speedkosten)+" Spins)"
@@ -626,9 +659,6 @@ var multykosten = 10
         click.src = "./click.mp3"
         click.play()
 
-        if(Math.floor(spins) < Math.floor(speedkosten)) return;
-
-
             if(spintime <=speedlimit){
                 document.getElementById("faster").style.backgroundColor ="RED"
                 document.getElementById("faster").innerText = "MAX"
@@ -638,6 +668,8 @@ var multykosten = 10
                 document.getElementById("spinspeedid").innerText = "Speed: " + speed
                 return;
             }
+
+            if(Math.floor(spins) < Math.floor(speedkosten)) return;
 
             spins -= Math.floor(speedkosten)
 
@@ -684,8 +716,6 @@ var multykosten = 10
         click.src = "./click.mp3"
         click.play()
 
-        if(Math.floor(spins) < Math.floor(weightkosten)) return;
-
         if(weight >= weightlimit){
             document.getElementById("weight").style.backgroundColor ="RED"
                 document.getElementById("weight").innerText = "MAX"
@@ -695,6 +725,8 @@ var multykosten = 10
                 document.getElementById("spinweightid").innerText = "Weight: " + weight
                 return;
             }
+
+            if(Math.floor(spins) < Math.floor(weightkosten)) return;
 
             spins -= Math.floor(weightkosten)
 
@@ -739,15 +771,18 @@ var multykosten = 10
         let click = new Audio()
         click.src = "./click.mp3"
         click.play()
-        if(Math.floor(spins) < Math.floor(multykosten)) return;
 
         if(multiplyer >= multylimit){
             document.getElementById("multy").style.backgroundColor ="RED"
                 document.getElementById("multy").innerText = "MAX"
 
                 multiplyer = multylimit
+
+                document.getElementById("spinmultyid").innerText = "Spins per spin: " + multiplyer
                 return;
         }
+
+        if(Math.floor(spins) < Math.floor(multykosten)) return;
 
             spins -= Math.floor(multykosten)
 
@@ -758,6 +793,8 @@ var multykosten = 10
 
 
         multiplyer++
+
+        document.getElementById("spinmultyid").innerText = "Spins per spin: " + multiplyer
 
         save()
 
@@ -899,18 +936,22 @@ function Backgr5(){
             if(fortschritt >= 100){
                 let change = Math.floor(Math.random() * 5)
                 if(change == 1){
+                    let good = new Audio()
+                    good.src ="./hack complete.mp3"
+                    good.volume = 0.8
+                    good.play()
                     document.getElementById("hackbutton").innerText = "Hack was good!"
                     if(pen == "./StartPen.jpg"){
-                        spins += 10000
+                        spins += 20000
                     }
                     if(pen == "./Pen2.jpg"){
-                        spins += 100000
+                        spins += 200000
                     }
                     if(pen == "./Pen3.jpg"){
-                        spins += 500000
+                        spins += 1000000
                     }
                     if(pen == "./Pen4.jpg"){
-                        spins += 1000000
+                        spins += 2000000
                     }
                     if(pen == "./Pen5.jpg"){
                         spins += 5000000
@@ -923,6 +964,9 @@ function Backgr5(){
                         ishacking = 0
                     },5000)
                 }else{
+                    let bad = new Audio()
+                    bad.src ="./hack bad.mp3"
+                    bad.play()
                     document.getElementById("hackbutton").innerText = "Hack was bad!"
                     setTimeout(()=>{
                         document.getElementById("hackbutton").innerText = "Hack Spins"
