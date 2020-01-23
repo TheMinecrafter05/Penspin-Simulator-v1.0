@@ -67,7 +67,7 @@
             }
 
             #skins:hover{
-                cursor: not-allowed;
+                cursor: pointer;
             }
 
             #skins{
@@ -178,6 +178,37 @@
                 height: 120;
             }
 
+            #noskin{
+                background-repeat: no-repeat;
+                width: 150;
+                height: 110;
+            }
+
+            #skin1{
+                width: 150;
+                height: 150;
+            }
+
+            #skin2{
+                width: 150;
+                height: 150;
+            }
+
+            #skin3{
+                width: 150;
+                height: 150;
+            }
+
+            #skin4{
+                width: 150;
+                height: 150;
+            }
+
+            #skin5{
+                width: 150;
+                height: 150;
+            }
+
             #hackbutton:hover{
                 cursor:cell;
             }
@@ -189,6 +220,19 @@
                 left: 93%;
                 top: 85%;
                 background-color: rgb(141, 8, 19);
+            }
+
+            #hackbutton:hover{
+                cursor:cell;
+            }
+
+            #winbutton{
+                position: absolute;
+                width: 100px;
+                height: 60px;
+                left: 93%;
+                top: 75%;
+                background-color: rgb(13, 93, 30);
             }
 
             .Spinstext{
@@ -230,7 +274,7 @@
         </style>
     </head>
     <body style="overflow: hidden; background-repeat: no-repeat; background-size: 100%;" id="Body">
-       <img class="Pen"; id="penid" style="top: 25%; left: 37%; position: absolute;">
+       <img class="Pen"; id="penid" style="top: 20%; left: 36%; position: absolute;">
        <div class="ueberschrift">Penspin Simulator</div>
        <image class="background"></image>
 
@@ -241,7 +285,7 @@
         <button id="pen3" onclick="Pen3()">Pen 3 (1.000.000 Spins)</button>
         <button id="pen4" onclick="Pen4()">Pen 4 (5.000.000 Spins)</button>
         <button id="pen5" onclick="Pen5()">Pen 5 (10.000.000 Spins)</button>
-        <button id="skins" onclick="Skins()">Pen Skins</button>
+        <button id="skins" onclick="SkinShop()">Pen Skins</button>
 
        </div>
 
@@ -252,6 +296,7 @@
         <button id="multy" onclick="multy()">Spin Multiplyer (10 Spins)</button>
         <button id="backgrounds" onclick="Backgrounds()">Backgrounds</button>
         <button id="hackbutton" onclick="Hack()">Hack Spins</button>
+        <button id="winbutton" onclick="Win()">Win Spins</button>
 
        </div>
 
@@ -265,9 +310,17 @@
 
        </div>
 
-       <div class="Spinstext" id="spintextid">Spins: 150</div>
-       <div class="spinspeed" id="spinspeedid">Speed: 1</div>
-       <div class="spinweight" id="spinweightid">Weight: 1</div>
-       <div class="spinmulty" id="spinmultyid">Spins per spin: 1</div>
+       <div id="PenSkinShop" style="position:absolute; right: 200%; top: 10%; background-color: rgb(83, 146, 11); width: 700px; height: 500px;">
+
+        <button id="noskin"; onclick="noSkin()" style="background-image: url(./X.png); background-size: 100%; color: rgb(0, 0, 0);">Remove Skin</button>
+        <button id="skin1"; onclick="Skin1()" style="background-image: url(./Pen5Skin1.png); background-size: 100%; color: rgb(0, 0, 0);">Skin 1 (1000 Spins)</button>
+        <button id="skin2"; onclick="Skin2()" style="background-image: url(./Pen5Skin2.png); background-size: 100%; color: rgb(0, 0, 0);">Skin 2 (250 Spins)</button>
+        <button id="skin3"; onclick="Skin3()" style="background-image: url(./Pen5Skin3.gif); background-size: 100%; color: rgb(0, 0, 0);">Skin 3 (2500 Spins)</button>
+       </div>
+
+       <div class="Spinstext" id="spintextid">Spins: 150/∞</div>
+       <div class="spinspeed" id="spinspeedid">Speed: 1/100</div>
+       <div class="spinweight" id="spinweightid">Weight: 1/100</div>
+       <div class="spinmulty" id="spinmultyid">Spins per spin: 1/50</div>
     </body>
 </html>
