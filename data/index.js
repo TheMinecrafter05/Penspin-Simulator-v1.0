@@ -1938,7 +1938,7 @@ function Backgrounds(){
 
 //Wenn man sich Hintergrund 1 kauft
 function Backgr1(){
-    if(price = "OFF"){
+    if(price == "OFF"){
         if(back == "./Background1.jpg") return;
         document.body.style.backgroundImage = "url(./Background1.jpg)"
         document.getElementById("BackgroundShop").style.left = "200%"
@@ -1963,7 +1963,7 @@ save()
 
 //Wenn man sich Hintergrund 2 kauft
 function Backgr2(){
-    if(price = "OFF"){
+    if(price == "OFF"){
         if(back == "./Background2.png") return;
         document.body.style.backgroundImage = "url(./Background2.png)"
         document.getElementById("BackgroundShop").style.left = "200%"
@@ -1988,7 +1988,7 @@ save()
 
 //Wenn man sich Hintergrund 3 kauft
 function Backgr3(){
-    if(price = "OFF"){
+    if(price == "OFF"){
         if(back == "./Background3.gif") return;
         document.body.style.backgroundImage = "url(./Background3.gif)"
         document.getElementById("BackgroundShop").style.left = "200%"
@@ -2013,7 +2013,7 @@ function Backgr3(){
 
     //Wenn man sich Hintergrund 4 kauft
 function Backgr4(){
-    if(price = "OFF"){
+    if(price == "OFF"){
         if(back == "./Background4.jpg") return;
         document.body.style.backgroundImage = "url(./Background4.jpg)"
         document.getElementById("BackgroundShop").style.left = "200%"
@@ -2038,7 +2038,7 @@ function Backgr4(){
 
     //Wenn man sich Hintergrund 5 kauft
 function Backgr5(){
-    if(price = "OFF"){
+    if(price == "OFF"){
         if(back == "./Background5.png") return;
         document.body.style.backgroundImage = "url(./Background5.png)"
         document.getElementById("BackgroundShop").style.left = "200%"
