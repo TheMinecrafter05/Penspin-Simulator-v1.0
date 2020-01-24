@@ -37,6 +37,8 @@ var pen = "./StartPen.png";
 
 var skin = "NaN"
 
+var popuppress = 0;
+
 let music = new Audio()
 music.src = "./Background-Music.mp3"
 music.volume = 0.2
@@ -608,7 +610,7 @@ var cheats = [
         if(skin == "Skin3"){
             document.getElementById("penid").src="./Pen2Skin3.gif"
         }
-        spins -= 100000
+        spins = 0
 
         degreenumber = 5
 
@@ -907,7 +909,7 @@ var cheats = [
             document.getElementById("penid").src="./Pen3Skin3.gif"
         }
 
-        spins -= 1000000
+        spins = 0
 
         degreenumber = 10
 
@@ -1199,7 +1201,7 @@ var cheats = [
             document.getElementById("penid").src="./Pen4Skin3.gif"
         }
 
-        spins -= 5000000
+        spins = 0
 
         degreenumber = 15
 
@@ -1483,7 +1485,7 @@ var cheats = [
             document.getElementById("penid").src="./Pen5Skin3.gif"
         }
 
-        spins -= 10000000
+        spins = 0
 
         degreenumber = 20
 
@@ -2383,7 +2385,7 @@ function Skin3(){
             clicks.play()
             document.getElementById("winbutton").innerText = winfortschritt+"%"
             if(winfortschritt >= 100){
-                let change = Math.floor(Math.random() * 10)
+                let change = Math.floor(Math.random() * 8)
                 if(change == 1){
                     let good = new Audio()
                     good.src ="./hack complete.mp3"
@@ -2430,62 +2432,28 @@ function Skin3(){
 
     //Popup zufall
     setInterval(function(){
+        let pop = new Audio()
+        pop.src ="./pop.mp3"
+        pop.volume = 0.8
+        pop.play()
+
         let PopUp = document.getElementById("popup")
 
         let pleft = Math.floor(Math.random() * 90) + 1
         let ptop = Math.floor(Math.random() * 90) + 1
 
-        if(pen == "./StartPen.png"){
-            PopUp.innerText = "5000 Spins"
-            PopUp.style.left = `${pleft}%`
-            PopUp.style.right = `${ptop}%`
-            PopUp.style.backgroundColor = "RANDOM"
-            setTimeout(()=>{
-                PopUp.style.left = `200%`
-            },2000)
-        }
+        popuppress = 0
 
-        if(pen == "./Pen2.png"){
-            PopUp.innerText = "50000 Spins"
-            PopUp.style.left = `${pleft}%`
-            PopUp.style.top = `${ptop}%`
-            PopUp.style.backgroundColor = "RANDOM"
-            setTimeout(()=>{
-                PopUp.style.left = `200%`
-            },2000)
-        }
+        PopUp.innerText = "10000 Spins"
+        PopUp.style.left = `${pleft}%`
+        PopUp.style.bottom = `${ptop}%`
+        PopUp.style.backgroundColor = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
+        setTimeout(()=>{
+            PopUp.style.left = `200%`
+            popuppress = 1
+        },2500)
 
-        if(pen == "./Pen3.png"){
-            PopUp.innerText = "250000 Spins"
-            PopUp.style.left = `${pleft}%`
-            PopUp.style.top = `${ptop}%`
-            PopUp.style.backgroundColor = "RANDOM"
-            setTimeout(()=>{
-                PopUp.style.left = `200%`
-            },2500)
-        }
-
-        if(pen == "./Pen4.png"){
-            PopUp.innerText = "500000 Spins"
-            PopUp.style.left = `${pleft}%`
-            PopUp.style.top = `${ptop}%`
-            PopUp.style.backgroundColor = "RANDOM"
-            setTimeout(()=>{
-                PopUp.style.left = `200%`
-            },2500)
-        }
-
-        if(pen == "./Pen5.png"){
-            PopUp.innerText = "2500000 Spins"
-            PopUp.style.left = `${pleft}%`
-            PopUp.style.top = `${ptop}%`
-            PopUp.style.backgroundColor = "RANDOM"
-            setTimeout(()=>{
-                PopUp.style.left = `200%`
-            },2500)
-        }
-
-    },Math.floor(Math.random() * 30000))
+    },30000)
 
     //Wenn man das popup erwischt hat
     function PopUp() {
@@ -2493,30 +2461,13 @@ function Skin3(){
         click.src = "./click.mp3"
         click.play()
 
+
+        if(popuppress != 0) return;
+
+        popuppress = 1
+
         let PopUp = document.getElementById("popup")
         PopUp.style.left = "200%";  
-        if(pen == "./StartPen.png"){
-            spins += 5000
-            document.getElementById("spintextid").innerText = "Spins: " + Math.floor(spins)
-        }
-
-        if(pen == "./Pen2.png"){
-            spins += 50000
-            document.getElementById("spintextid").innerText = "Spins: " + Math.floor(spins)
-        }
-
-        if(pen == "./Pen3.png"){
-            spins += 250000
-            document.getElementById("spintextid").innerText = "Spins: " + Math.floor(spins)
-        }
-
-        if(pen == "./Pen4.png"){
-            spins += 500000
-            document.getElementById("spintextid").innerText = "Spins: " + Math.floor(spins)
-        }
-
-        if(pen == "./Pen5.png"){
-            spins += 2500000
-            document.getElementById("spintextid").innerText = "Spins: " + Math.floor(spins)
-        }
+        spins += 10000
+        document.getElementById("spintextid").innerText = "Spins: " + Math.floor(spins)
     }
