@@ -612,9 +612,9 @@ var cheats = [
 
         degreenumber = 5
 
-        multylimit += 5
+        multylimit += 10
 
-        weightlimit += 5
+        weightlimit += 10
 
         speed = 5
 
@@ -624,21 +624,17 @@ var cheats = [
 
         weight = 5
 
-        speedpreis = 1.035;
+        speedpreis = 1.045;
 
-        weightpreis = 1.04;
+        weightpreis = 1.05;
 
-        multypreis = 1.05;
+        multypreis = 1.06;
 
         speedkosten = 10
 
         weightkosten = 15
 
         multykosten = 10
-
-        speedpreis += 0.02
-        weightpreis += 0.02
-        multypreis += 0.02
 
         document.getElementById("spintextid").innerText = "Spins: " + spins
         document.getElementById("spinspeedid").innerText = "Speed: " + speed
@@ -921,27 +917,23 @@ var cheats = [
 
         multiplyer = 10
 
-        multylimit += 10
+        multylimit += 15
 
-        weightlimit += 10
+        weightlimit += 15
 
         weight = 10
 
-        speedpreis = 1.035;
+        speedpreis = 1.052;
 
-        weightpreis = 1.04;
+        weightpreis = 1.057;
 
-        multypreis = 1.05;
+        multypreis = 1.063;
 
         speedkosten = 10
 
         weightkosten = 15
 
         multykosten = 10
-
-        speedpreis += 0.02
-        weightpreis += 0.02
-        multypreis += 0.02
 
         document.getElementById("spintextid").innerText = "Spins: " + spins+"/∞"
         document.getElementById("spinspeedid").innerText = "Speed: " + speed+"/100"
@@ -1211,9 +1203,9 @@ var cheats = [
 
         degreenumber = 15
 
-        multylimit += 15
+        multylimit += 20
 
-        weightlimit += 15
+        weightlimit += 20
 
         speed = 15
 
@@ -1223,21 +1215,17 @@ var cheats = [
 
         weight = 15
 
-        speedpreis = 1.035;
+        speedpreis = 1.03;
 
-        weightpreis = 1.04;
+        weightpreis = 1.055;
 
-        multypreis = 1.05;
+        multypreis = 1.065;
 
         speedkosten = 10
 
         weightkosten = 15
 
         multykosten = 10
-
-        speedpreis += 0.02
-        weightpreis += 0.02
-        multypreis += 0.02
 
         document.getElementById("spintextid").innerText = "Spins: " + spins+"/∞"
         document.getElementById("spinspeedid").innerText = "Speed: " + speed+"/100"
@@ -1499,9 +1487,9 @@ var cheats = [
 
         degreenumber = 20
 
-        multylimit += 20
+        multylimit += 25
 
-        weightlimit += 20
+        weightlimit += 25
 
         speed = 20
 
@@ -1511,7 +1499,7 @@ var cheats = [
 
         weight = 20
 
-        speedpreis = 1.055;
+        speedpreis = 1.06;
 
         weightpreis = 1.06;
 
@@ -1950,12 +1938,12 @@ function Backgr1(){
 let click = new Audio()
 click.src = "./click.mp3"
 click.play()
-if(spins < 500) return console.log("Zu wenig");
+if(spins < 5000) return console.log("Zu wenig");
 if(back == "./Background1.jpg") return;
 document.body.style.backgroundImage = "url(./Background1.jpg)"
 document.getElementById("BackgroundShop").style.left = "200%"
 back = "./Background1.jpg"
-spins -= 500
+spins -= 5000
 document.getElementById("spintextid").innerText = "Spins: " + Math.floor(spins)+"/∞"
 openShop = 0
 save()
@@ -1975,12 +1963,12 @@ function Backgr2(){
 let click = new Audio()
 click.src = "./click.mp3"
 click.play()
-if(spins < 500) return console.log("Zu wenig");
+if(spins < 5000) return console.log("Zu wenig");
 if(back == "./Background2.png") return;
 document.body.style.backgroundImage = "url(./Background2.png)"
 document.getElementById("BackgroundShop").style.left = "200%"
 back = "./Background2.png"
-spins -= 500
+spins -= 5000
 document.getElementById("spintextid").innerText = "Spins: " + Math.floor(spins)+"/∞"
 openShop = 0
 save()
@@ -2000,12 +1988,12 @@ function Backgr3(){
     let click = new Audio()
     click.src = "./click.mp3"
     click.play()
-    if(spins < 1500) return console.log("Zu wenig");
+    if(spins < 15000) return console.log("Zu wenig");
     if(back == "./Background3.gif") return;
     document.body.style.backgroundImage = "url(./Background3.gif)"
     document.getElementById("BackgroundShop").style.left = "200%"
     back = "./Background3.gif"
-    spins -= 1500
+    spins -= 15000
     document.getElementById("spintextid").innerText = "Spins: " + Math.floor(spins)+"/∞"
     openShop = 0
     save()
@@ -2025,12 +2013,12 @@ function Backgr4(){
     let click = new Audio()
     click.src = "./click.mp3"
     click.play()
-    if(spins < 500) return console.log("Zu wenig");
+    if(spins < 5000) return console.log("Zu wenig");
     if(back == "./Background4.jpg") return;
     document.body.style.backgroundImage = "url(./Background4.jpg)"
     document.getElementById("BackgroundShop").style.left = "200%"
     back = "./Background4.jpg"
-    spins -= 500
+    spins -= 5000
     document.getElementById("spintextid").innerText = "Spins: " + Math.floor(spins)+"/∞"
     openShop = 0
     save()
@@ -2050,12 +2038,12 @@ function Backgr5(){
     let click = new Audio()
     click.src = "./click.mp3"
     click.play()
-    if(spins < 500) return console.log("Zu wenig");
+    if(spins < 5000) return console.log("Zu wenig");
     if(back == "./Background5.png") return;
     document.body.style.backgroundImage = "url(./Background5.png)"
     document.getElementById("BackgroundShop").style.left = "200%"
     back = "./Background5.png"
-    spins -= 500
+    spins -= 5000
     document.getElementById("spintextid").innerText = "Spins: " + Math.floor(spins)+"/∞"
     openShop = 0
     save()
@@ -2145,7 +2133,7 @@ function Skin1(){
     return;
     }
 
-    if(spins < 1000) return console.log("Zu wenig");
+    if(spins < 10000) return console.log("Zu wenig");
 
     if(skin == "Skin1") return;
 
@@ -2171,7 +2159,7 @@ function Skin1(){
 
     skin = "Skin1"
     document.getElementById("PenSkinShop").style.right = "200%"
-    spins -= 1000
+    spins -= 10000
     document.getElementById("spintextid").innerText = "Spins: " + Math.floor(spins)+"/∞"
     openSShop = 0
     save()
@@ -2213,7 +2201,7 @@ function Skin2(){
     return;
     }
 
-    if(spins < 250) return console.log("Zu wenig");
+    if(spins < 2500) return console.log("Zu wenig");
 
     if(skin == "Skin2") return;
 
@@ -2239,7 +2227,7 @@ function Skin2(){
 
     skin = "Skin2"
     document.getElementById("PenSkinShop").style.right = "200%"
-    spins -= 250
+    spins -= 2500
     document.getElementById("spintextid").innerText = "Spins: " + Math.floor(spins)+"/∞"
     openSShop = 0
     save()
@@ -2281,7 +2269,7 @@ function Skin3(){
     return;
     }
 
-    if(spins < 2500) return console.log("Zu wenig");
+    if(spins < 25000) return console.log("Zu wenig");
 
     if(skin == "Skin3") return;
 
@@ -2307,7 +2295,7 @@ function Skin3(){
 
     skin = "Skin3"
     document.getElementById("PenSkinShop").style.right = "200%"
-    spins -= 2500
+    spins -= 25000
     document.getElementById("spintextid").innerText = "Spins: " + Math.floor(spins)+"/∞"
     openSShop = 0
     save()
@@ -2438,4 +2426,97 @@ function Skin3(){
                 clearInterval(Winning)
             }
         },50)
+    }
+
+    //Popup zufall
+    setInterval(function(){
+        let PopUp = document.getElementById("popup")
+
+        let pleft = Math.floor(Math.random() * 90) + 1
+        let ptop = Math.floor(Math.random() * 90) + 1
+
+        if(pen == "./StartPen.png"){
+            PopUp.innerText = "5000 Spins"
+            PopUp.style.left = `${pleft}%`
+            PopUp.style.right = `${ptop}%`
+            PopUp.style.backgroundColor = "RANDOM"
+            setTimeout(()=>{
+                PopUp.style.left = `200%`
+            },2000)
+        }
+
+        if(pen == "./Pen2.png"){
+            PopUp.innerText = "50000 Spins"
+            PopUp.style.left = `${pleft}%`
+            PopUp.style.top = `${ptop}%`
+            PopUp.style.backgroundColor = "RANDOM"
+            setTimeout(()=>{
+                PopUp.style.left = `200%`
+            },2000)
+        }
+
+        if(pen == "./Pen3.png"){
+            PopUp.innerText = "250000 Spins"
+            PopUp.style.left = `${pleft}%`
+            PopUp.style.top = `${ptop}%`
+            PopUp.style.backgroundColor = "RANDOM"
+            setTimeout(()=>{
+                PopUp.style.left = `200%`
+            },2500)
+        }
+
+        if(pen == "./Pen4.png"){
+            PopUp.innerText = "500000 Spins"
+            PopUp.style.left = `${pleft}%`
+            PopUp.style.top = `${ptop}%`
+            PopUp.style.backgroundColor = "RANDOM"
+            setTimeout(()=>{
+                PopUp.style.left = `200%`
+            },2500)
+        }
+
+        if(pen == "./Pen5.png"){
+            PopUp.innerText = "2500000 Spins"
+            PopUp.style.left = `${pleft}%`
+            PopUp.style.top = `${ptop}%`
+            PopUp.style.backgroundColor = "RANDOM"
+            setTimeout(()=>{
+                PopUp.style.left = `200%`
+            },2500)
+        }
+
+    },Math.floor(Math.random() * 30000))
+
+    //Wenn man das popup erwischt hat
+    function PopUp() {
+        let click = new Audio()
+        click.src = "./click.mp3"
+        click.play()
+
+        let PopUp = document.getElementById("popup")
+        PopUp.style.left = "200%";  
+        if(pen == "./StartPen.png"){
+            spins += 5000
+            document.getElementById("spintextid").innerText = "Spins: " + Math.floor(spins)
+        }
+
+        if(pen == "./Pen2.png"){
+            spins += 50000
+            document.getElementById("spintextid").innerText = "Spins: " + Math.floor(spins)
+        }
+
+        if(pen == "./Pen3.png"){
+            spins += 250000
+            document.getElementById("spintextid").innerText = "Spins: " + Math.floor(spins)
+        }
+
+        if(pen == "./Pen4.png"){
+            spins += 500000
+            document.getElementById("spintextid").innerText = "Spins: " + Math.floor(spins)
+        }
+
+        if(pen == "./Pen5.png"){
+            spins += 2500000
+            document.getElementById("spintextid").innerText = "Spins: " + Math.floor(spins)
+        }
     }
