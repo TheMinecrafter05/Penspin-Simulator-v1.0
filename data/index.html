@@ -178,10 +178,19 @@
                 height: 120;
             }
 
+
+            #noskin:hover{
+                cursor: pointer;
+            
+            }
             #noskin{
                 background-repeat: no-repeat;
                 width: 150;
                 height: 110;
+            }
+
+            #skin1:hover{
+                cursor: pointer;
             }
 
             #skin1{
@@ -189,9 +198,17 @@
                 height: 150;
             }
 
+            #skin2:hover{
+                cursor: pointer;
+            }
+
             #skin2{
                 width: 150;
                 height: 150;
+            }
+
+            #skin3:hover{
+                cursor: pointer;
             }
 
             #skin3{
@@ -199,9 +216,17 @@
                 height: 150;
             }
 
+            #skin4:hover{
+                cursor: pointer;
+            }
+
             #skin4{
                 width: 150;
                 height: 150;
+            }
+
+            #skin5:hover{
+                cursor: pointer;
             }
 
             #skin5{
@@ -270,13 +295,13 @@
                 top: 93%;
                 left: 43.5%;
             }
-
         </style>
     </head>
     <body style="overflow: hidden; background-repeat: no-repeat; background-size: 100%;" id="Body">
        <img class="Pen"; id="penid" style="top: 20%; left: 36%; position: absolute;">
        <div class="ueberschrift">Penspin Simulator</div>
        <image class="background"></image>
+       <button id="popup" onclick="PopUp()" style="position: absolute; left: 200%; width: 100; height: 80; background-size: 100%; background-repeat: no-repeat;">10000 Spins</button>
 
        <button onclick="localStorage.clear(); clearInterval(Actualpenspin)">Reset</button>
        <div class="pens">
@@ -302,20 +327,20 @@
 
        <div id="BackgroundShop" style="position:absolute; left: 200%; top: 10%; background-color: cornflowerblue; width: 700px; height: 500px;">
 
-        <button id="back1"; onclick="Backgr1()" style="background-image: url(./Background1.jpg); background-size: 100%; color: white;">Background 1 (500 Spins)</button>
-        <button id="back2"; onclick="Backgr2()" style="background-image: url(./Background2.png); background-size: 100%; color: white;">Background 2 (500 Spins)</button>
-        <button id="back3"; onclick="Backgr3()" style="background-image: url(./Background3.gif); background-size: 100%; color: white;">Background 3 (1500 Spins)</button>
-        <button id="back4"; onclick="Backgr4()" style="background-image: url(./Background4.jpg); background-size: 100%; color: white;">Background 4 (500 Spins)</button>
-        <button id="back5"; onclick="Backgr5()" style="background-image: url(./Background5.png); background-size: 100%; color: white;">Background 5 (500 Spins)</button>
+        <button id="back1"; onclick="Backgr1()" style="background-image: url(./Background1.jpg); background-size: 100%; color: white;">Background 1 (5000 Spins)</button>
+        <button id="back2"; onclick="Backgr2()" style="background-image: url(./Background2.png); background-size: 100%; color: white;">Background 2 (5000 Spins)</button>
+        <button id="back3"; onclick="Backgr3()" style="background-image: url(./Background3.gif); background-size: 100%; color: white;">Background 3 (15000 Spins)</button>
+        <button id="back4"; onclick="Backgr4()" style="background-image: url(./Background4.jpg); background-size: 100%; color: white;">Background 4 (5000 Spins)</button>
+        <button id="back5"; onclick="Backgr5()" style="background-image: url(./Background5.png); background-size: 100%; color: white;">Background 5 (5000 Spins)</button>
 
        </div>
 
        <div id="PenSkinShop" style="position:absolute; right: 200%; top: 10%; background-color: rgb(83, 146, 11); width: 700px; height: 500px;">
 
         <button id="noskin"; onclick="noSkin()" style="background-image: url(./X.png); background-size: 100%; color: rgb(0, 0, 0);">Remove Skin</button>
-        <button id="skin1"; onclick="Skin1()" style="background-image: url(./Pen5Skin1.png); background-size: 100%; color: rgb(0, 0, 0);">Skin 1 (1000 Spins)</button>
-        <button id="skin2"; onclick="Skin2()" style="background-image: url(./Pen5Skin2.png); background-size: 100%; color: rgb(0, 0, 0);">Skin 2 (250 Spins)</button>
-        <button id="skin3"; onclick="Skin3()" style="background-image: url(./Pen5Skin3.gif); background-size: 100%; color: rgb(0, 0, 0);">Skin 3 (2500 Spins)</button>
+        <button id="skin1"; onclick="Skin1()" style="background-image: url(./Pen5Skin1.png); background-size: 100%; color: rgb(0, 0, 0);">Skin 1 (10000 Spins)</button>
+        <button id="skin2"; onclick="Skin2()" style="background-image: url(./Pen5Skin2.png); background-size: 100%; color: rgb(0, 0, 0);">Skin 2 (2500 Spins)</button>
+        <button id="skin3"; onclick="Skin3()" style="background-image: url(./Pen5Skin3.gif); background-size: 100%; color: rgb(0, 0, 0);">Skin 3 (25000 Spins)</button>
        </div>
 
        <div class="Spinstext" id="spintextid">Spins: 150/∞</div>
